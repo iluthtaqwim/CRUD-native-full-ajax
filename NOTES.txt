@@ -1,0 +1,51 @@
+kesalahan nya adaa pada nama parameter post yang dikirim,
+param yang di kirim id tapi di file action nya nangkep nya id_karyawan,
+yang ke 2 nama filed di table id_karyawan bukan id
+yang ke 3 tidak ada values id yang di kirim ke file action
+
+var id = $('[name="id_delete"]').val();
+ini adalah contoh mengambil value dari input name id_delete
+
+var id = $(this).attr("id");
+$('[name="id_delete"]').val(id);
+ini adalah contoh mengirrim value ke input name id_delete
+
+				var id = $('[name="id_delete"]').val();
+				var action = 'delete';
+                console.log(id);
+				$.ajax({
+					url:"action.php",
+					method:"POST",
+					data:{id:id, action:action},
+					success:function(data)
+					{
+						$('#delete_confirmation').dialog('close');
+						$('#action_alert').html(data);
+						$('#action_alert').dialog('open');
+						load_data();
+					}
+				});
+
+perhatikan di nama param yang dikirim 
+
+var id_del = 1;
+var action_val = 'delete';
+data:{id:id_del, action:action_val},
+
+param yang dikirim adalah id dan action
+value dari id adalah id_del
+vale dari action adalah action_val
+
+di file action nanti pemangilan haru sesuai param yang dikirim
+
+ada pertanyaan lagi mas? atau ada yang kurang jelas?
+
+sudah jelas mas, nanti saya coba dulu 
+
+saya perbaiki dulu , mungkin problem di edit nya hampir sama
+
+oke mas
+
+makasih mas :)
+
+sama2 :)
